@@ -23,33 +23,17 @@ public class Price extends Entity {
 	public Book getBook() {
 		return book;
 	}
-
-	public void setBook(Book book) {
-		this.book = book;
-	}
-
+	
 	public Double getValue() {
 		return value;
-	}
-
-	public void setValue(Double value) {
-		this.value = value;
 	}
 
 	public Calendar getStart() {
 		return start;
 	}
 
-	public void setStart(Calendar start) {
-		this.start = start;
-	}
-
 	public Calendar getEnd() {
 		return end;
-	}
-
-	public void setEnd(Calendar end) {
-		this.end = end;
 	}
 
 }

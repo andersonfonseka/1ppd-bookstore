@@ -9,5 +9,7 @@ public interface BookBuilder {
 	public void buildAuthors();
 	
 	public Book build();
+
+	void buildPrice();
 	
 }

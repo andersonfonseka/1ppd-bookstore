@@ -1,42 +1,40 @@
 package com.oneppd.repository.memory;
 
-import com.oneppd.repository.AbstractRepository;
+import com.oneppd.repository.ConcreteRepository;
 
-public class ConcreteMemoryRepository extends AbstractRepository {
+public class ConcreteMemoryRepository extends ConcreteRepository {
 
-	@Override
 	public BookRepository getBookRepository() {
 		return BookRepository.getInstance();
 	}
 
-	@Override
 	public AuthorRepository getAuthorRepository() {
 		return AuthorRepository.getInstance();
 	}
 
-	@Override
 	public BookHasAuthorRepository getBookHasAuthorRepository() {
 		return BookHasAuthorRepository.getInstance();
 	}
 
-	@Override
 	public CustomerRepository getCustomerRepository() {
 		return CustomerRepository.getInstance();
 	}
 
-	@Override
 	public ItemRepository getItemRepository() {
 		return ItemRepository.getInstance();
 	}
 
-	@Override
 	public ShoppingCartRepository getShoppingCartRepository() {
 		return ShoppingCartRepository.getInstance();
 	}
 
-	@Override
 	public PriceRepository getPriceRepository() {
 		return PriceRepository.getInstance();
+	}
+
+	@Override
+	public CatalogRepository getCatalogRepository() {
+		return CatalogRepository.getInstance();
 	}
 
 }

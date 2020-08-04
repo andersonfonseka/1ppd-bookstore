@@ -6,6 +6,10 @@ import static org.junit.Assert.*;
 
 import com.oneppd.builders.BookBuilderImpl;
 import com.oneppd.builders.ShoppingCartBuilderImpl;
+import com.oneppd.decorator.BookPrinter;
+import com.oneppd.decorator.CustomerPrinter;
+import com.oneppd.decorator.Printer;
+import com.oneppd.decorator.PrinterImpl;
 import com.oneppd.domain.Author;
 import com.oneppd.domain.Book;
 import com.oneppd.domain.BookHasAuthor;
@@ -35,6 +39,9 @@ public class ShoppingCartTest {
 		customer.setFirstName("Anderson");
 		customer.setLastName("Silva");
 		customer.setNickName("Anderson Fonseca");
+		
+		Printer cusPrinter = new PrinterImpl(new CustomerPrinter(customer));
+		System.out.println(cusPrinter.doPrint());
 
 		customerRepository.add(customer);
 

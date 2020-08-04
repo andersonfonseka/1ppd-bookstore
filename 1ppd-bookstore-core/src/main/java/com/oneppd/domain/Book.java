@@ -9,6 +9,8 @@ public class Book extends Entity {
 	private Integer edition;
 	
 	private List<Author> authors;
+	
+	private Price price;
 
 	public Book() {
 		super();
@@ -40,6 +42,14 @@ public class Book extends Entity {
 
 	public void setAuthors(List<Author> authors) {
 		this.authors = authors;
+	}
+
+	public Price getPrice() {
+		return price;
+	}
+
+	public void setPrice(Price price) {
+		this.price = price;
 	}
 	
 }

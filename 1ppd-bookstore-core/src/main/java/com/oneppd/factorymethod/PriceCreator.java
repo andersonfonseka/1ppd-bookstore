@@ -6,6 +6,4 @@ public abstract class PriceCreator {
 	
 	public abstract Price getPrice();
 	
-	
-	
 }

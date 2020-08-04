@@ -1,6 +1,8 @@
 package com.oneppd.builders;
 
 import com.oneppd.domain.Book;
+import com.oneppd.factorymethod.PriceCreator;
+import com.oneppd.factorymethod.PricePeriodImpl;
 import com.oneppd.repository.AbstractRepository;
 
 public class BookBuilderImpl implements BookBuilder {
@@ -12,6 +14,7 @@ public class BookBuilderImpl implements BookBuilder {
 	public BookBuilderImpl(String uuid) {
 		this.book = builderBook(uuid);
 		buildAuthors();
+		buildPrice();
 	}
 
 	public Book builderBook(String uuid) {
@@ -25,5 +28,12 @@ public class BookBuilderImpl implements BookBuilder {
 	public Book build() {
 		return book;
 	}
+	
+	@Override
+	public void buildPrice() {
+		PriceCreator priceCreator = new PricePeriodImpl(this.book);
+		this.book.setPrice(priceCreator.getPrice());
+	}
+	
 	
 }

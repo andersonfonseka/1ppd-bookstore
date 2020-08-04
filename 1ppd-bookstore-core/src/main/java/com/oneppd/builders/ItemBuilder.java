@@ -10,8 +10,6 @@ public interface ItemBuilder {
 
 	public void buildBook();
 	
-	public void buildPrice();
-	
 	public Item build();
 	
 }

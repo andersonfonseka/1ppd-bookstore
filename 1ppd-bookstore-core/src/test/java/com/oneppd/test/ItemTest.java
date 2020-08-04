@@ -57,7 +57,7 @@ public class ItemTest {
 	
 	private Book getBook() {
 		
-AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
 		
 		BookRepository bookRepository = abstractRepository.getBookRepository();
 		AuthorRepository authorRepository = abstractRepository.getAuthorRepository();

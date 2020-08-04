@@ -3,8 +3,6 @@ package com.oneppd.builders;
 import com.oneppd.domain.Book;
 import com.oneppd.domain.Item;
 import com.oneppd.domain.ShoppingCart;
-import com.oneppd.factorymethod.PriceCreator;
-import com.oneppd.factorymethod.PricePeriodImpl;
 import com.oneppd.repository.AbstractRepository;
 
 public class ItemBuilderImpl implements ItemBuilder {
@@ -17,7 +15,6 @@ public class ItemBuilderImpl implements ItemBuilder {
 		this.item = builderItem(uuid);
 		buildShoppingCart();
 		buildBook();
-		buildPrice();
 	}
 
 	@Override
@@ -38,12 +35,6 @@ public class ItemBuilderImpl implements ItemBuilder {
 	@Override
 	public Item build() {
 		return this.item;
-	}
-
-	@Override
-	public void buildPrice() {
-		PriceCreator priceCreator = new PricePeriodImpl(this.item.getBook());
-		this.item.setPrice(priceCreator.getPrice());
 	}
 	
 }

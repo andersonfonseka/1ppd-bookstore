@@ -7,9 +7,7 @@ public class Item extends Entity {
 	private Book book;
 	
 	private Integer quantity;
-	
-	private Price price;
-	
+		
 	public Item(String uuid) {
 		super(uuid);
 	}
@@ -43,14 +41,6 @@ public class Item extends Entity {
 
 	public void setShoppingCart(ShoppingCart shoppingCart) {
 		this.shoppingCart = shoppingCart;
-	}
-
-	public Price getPrice() {
-		return price;
-	}
-
-	public void setPrice(Price price) {
-		this.price = price;
 	}
 	
 }
