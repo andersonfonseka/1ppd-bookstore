@@ -16,6 +16,10 @@ public class BookPrinter implements Printer {
 	public String doPrint() {
 
 		StringBuilder sb = new StringBuilder();
+		
+		sb.append("Book\n");
+		sb.append("===================================\n");
+
 
 		sb.append(this.book.getUuid() + "\n");
 		sb.append(this.book.getTitle() + "\n");
@@ -25,7 +29,7 @@ public class BookPrinter implements Printer {
 			sb.append(new PrinterImpl(new AuthorPrinter(author)).doPrint());
 		}
 
-		sb.append(this.book.getPrice() + "\n");
+		sb.append(new PrinterImpl(new PricePrinter(this.book.getPrice())).doPrint());
 
 		return sb.toString();
 	}

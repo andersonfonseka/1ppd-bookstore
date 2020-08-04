@@ -15,6 +15,10 @@ public class AuthorPrinter implements Printer {
 	public String doPrint() {
 
 		StringBuilder sb = new StringBuilder();
+		
+		sb.append("Author\n");
+		sb.append("===================================\n");
+		
 
 		sb.append(this.author.getUuid() + "\n");
 		sb.append(this.author.getName() + "\n");

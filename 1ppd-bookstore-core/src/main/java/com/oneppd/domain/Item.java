@@ -22,10 +22,6 @@ public class Item extends Entity {
 	public Integer getQuantity() {
 		return quantity;
 	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
 	
 	public void setBook(Book book) {
 		this.book = book;

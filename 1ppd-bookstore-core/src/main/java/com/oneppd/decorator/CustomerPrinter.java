@@ -16,6 +16,10 @@ public class CustomerPrinter implements Printer {
 		
 			StringBuilder sb = new StringBuilder();
 			
+			sb.append("Customer\n");
+			sb.append("===================================\n");
+
+			
 			sb.append(this.customer.getUuid() +"\n");
 			sb.append(this.customer.getFirstName() +"\n");
 			sb.append(this.customer.getLastName() +"\n");

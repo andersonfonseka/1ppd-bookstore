@@ -17,6 +17,10 @@ public class CatalogPrinter implements Printer {
 		
 		StringBuilder sb = new StringBuilder();
 
+		sb.append("Catalog\n");
+		sb.append("===================================\n");
+
+		
 		sb.append(this.catalog.getUuid() + "\n");
 		sb.append(this.catalog.getName() + "\n");
 		

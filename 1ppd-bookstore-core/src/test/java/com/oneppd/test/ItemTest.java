@@ -8,6 +8,9 @@ import org.junit.Test;
 
 import com.oneppd.builders.BookBuilderImpl;
 import com.oneppd.builders.ItemBuilderImpl;
+import com.oneppd.decorator.ItemPrinter;
+import com.oneppd.decorator.Printer;
+import com.oneppd.decorator.PrinterImpl;
 import com.oneppd.domain.Author;
 import com.oneppd.domain.Book;
 import com.oneppd.domain.BookHasAuthor;
@@ -50,6 +53,9 @@ public class ItemTest {
 		itemRepository.add(item);
 		
 		Item composedItem = new ItemBuilderImpl(item.getUuid()).build();
+		
+		Printer printer = new PrinterImpl(new ItemPrinter(composedItem));
+		System.out.println(printer.doPrint());
 				
 		assertNotNull(composedItem);
 		
