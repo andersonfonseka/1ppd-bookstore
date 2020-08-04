@@ -5,9 +5,11 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ AbstractRepositoryTest.class,
+@SuiteClasses({ BookServiceTest.class, AbstractRepositoryTest.class,
 				AuthorBuilderTest.class, BookBuilderTest.class, BookRepositoryTest.class, 
-				ShoppingCartTest.class, ItemTest.class, PriceTest.class, CatalogTest.class })
+				ShoppingCartTest.class, ItemTest.class, PriceTest.class, CatalogTest.class
+				})
+
 public class AllTests {
 
 }
