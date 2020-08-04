@@ -1,8 +1,8 @@
 package com.oneppd.builders;
 
-import com.oneppd.domain.Book;
 import com.oneppd.domain.Item;
 import com.oneppd.domain.ShoppingCart;
+import com.oneppd.flyweight.BookFlyweight;
 import com.oneppd.repository.AbstractRepository;
 
 public class ItemBuilderImpl implements ItemBuilder {
@@ -29,7 +29,8 @@ public class ItemBuilderImpl implements ItemBuilder {
 
 	@Override
 	public void buildBook() {
-		this.item.setBook((Book) abstractRepository.getBookRepository().get(this.item.getBook()));
+		BookFlyweight catalogFlyweight =  BookFlyweight.getInstance();
+		this.item.setBook(catalogFlyweight.getBook(this.item.getBook()));
 	}
 
 	@Override

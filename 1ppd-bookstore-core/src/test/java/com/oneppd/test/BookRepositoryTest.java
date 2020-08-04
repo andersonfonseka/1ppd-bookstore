@@ -52,7 +52,6 @@ public class BookRepositoryTest {
 	public void testRemove() {
 	
 		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
-		
 		BookRepository bookRepository = abstractRepository.getBookRepository();
 		
 		Book book = new Book();

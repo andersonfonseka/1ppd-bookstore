@@ -5,12 +5,13 @@ import java.util.List;
 
 import com.oneppd.domain.Book;
 import com.oneppd.domain.Catalog;
+import com.oneppd.flyweight.BookFlyweight;
 import com.oneppd.repository.AbstractRepository;
 
 public class CatalogBuilderImpl implements CatalogBuilder {
 
 	private Catalog catalog;
-
+	
 	private AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
 	
 	public CatalogBuilderImpl(String uuid) {
@@ -26,10 +27,12 @@ public class CatalogBuilderImpl implements CatalogBuilder {
 	@Override
 	public void buildBooks() {
 		
+		BookFlyweight catalogFlyweight =  BookFlyweight.getInstance();
+		
 		List<Book> books = new ArrayList<Book>();
 		
 		for(Book book: this.catalog.getBooks()) {
-			books.add((Book) abstractRepository.getBookRepository().get(book));
+			books.add(catalogFlyweight.getBook(book));
 		}
 	}
 
