@@ -1,4 +1,4 @@
-package com.oneppd.service;
+package com.oneppd.service.impl;
 
 import java.lang.reflect.UndeclaredThrowableException;
 import java.util.List;
@@ -9,6 +9,7 @@ import com.oneppd.decorator.Printer;
 import com.oneppd.decorator.PrinterImpl;
 import com.oneppd.domain.Book;
 import com.oneppd.repository.AbstractRepository;
+import com.oneppd.service.BookService;
 
 public class BookServiceImpl implements BookService {
 

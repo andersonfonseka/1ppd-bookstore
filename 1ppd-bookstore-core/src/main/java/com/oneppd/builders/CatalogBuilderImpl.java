@@ -14,6 +14,8 @@ public class CatalogBuilderImpl implements CatalogBuilder {
 	
 	private AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
 	
+	private BookFlyweight catalogFlyweight =  BookFlyweight.getInstance();
+	
 	public CatalogBuilderImpl(String uuid) {
 		this.catalog = builderCatalog(uuid);
 		buildBooks();
@@ -26,8 +28,6 @@ public class CatalogBuilderImpl implements CatalogBuilder {
 
 	@Override
 	public void buildBooks() {
-		
-		BookFlyweight catalogFlyweight =  BookFlyweight.getInstance();
 		
 		List<Book> books = new ArrayList<Book>();
 		

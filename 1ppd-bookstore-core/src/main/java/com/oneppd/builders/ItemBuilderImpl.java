@@ -11,6 +11,8 @@ public class ItemBuilderImpl implements ItemBuilder {
 
 	private AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
 	
+	private BookFlyweight catalogFlyweight =  BookFlyweight.getInstance();
+	
 	public ItemBuilderImpl(String uuid) {
 		this.item = builderItem(uuid);
 		buildShoppingCart();
@@ -29,7 +31,7 @@ public class ItemBuilderImpl implements ItemBuilder {
 
 	@Override
 	public void buildBook() {
-		BookFlyweight catalogFlyweight =  BookFlyweight.getInstance();
+
 		this.item.setBook(catalogFlyweight.getBook(this.item.getBook()));
 	}
 

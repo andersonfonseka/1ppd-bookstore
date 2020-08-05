@@ -27,7 +27,7 @@ public class BookServiceTest {
 		
 		getBook();
 		
-		BookService bookService = new ServiceFactory().getBookService();
+		BookService bookService = (BookService) new ServiceFactory().getService(BookService.class);
 		
 		List<Book> books = bookService.all();
 		
