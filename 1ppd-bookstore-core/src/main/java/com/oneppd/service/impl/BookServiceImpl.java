@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.oneppd.builders.BookBuilderImpl;
 import com.oneppd.decorator.BookPrinter;
-import com.oneppd.decorator.Printer;
+import com.oneppd.decorator.DecoratorPrinter;
 import com.oneppd.decorator.PrinterImpl;
 import com.oneppd.domain.Book;
 import com.oneppd.repository.BookstoreAbstractRepository;
@@ -19,7 +19,7 @@ public class BookServiceImpl implements BookService {
 		List<Book> books = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY).getBookRepository().all();
 		
 		for (Book book : books) {
-			Printer printer = new PrinterImpl(new BookPrinter(new BookBuilderImpl(book.getUuid()).build()));
+			DecoratorPrinter printer = new PrinterImpl(new BookPrinter(new BookBuilderImpl(book.getUuid()).build()));
 			System.out.println(printer.doPrint());
 		}
 		

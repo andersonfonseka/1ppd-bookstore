@@ -1,6 +1,6 @@
 package com.oneppd.decorator;
 
-public interface Printer {
+public interface DecoratorPrinter {
 	
 	public String doPrint();
 	

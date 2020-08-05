@@ -3,7 +3,7 @@ package com.oneppd.decorator;
 import com.oneppd.domain.Item;
 import com.oneppd.domain.ShoppingCart;
 
-public class ShoppingCartPrinter implements Printer {
+public class ShoppingCartPrinter implements DecoratorPrinter {
 
 	private ShoppingCart shoppingCart;
 

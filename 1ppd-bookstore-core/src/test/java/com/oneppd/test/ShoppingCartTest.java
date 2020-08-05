@@ -9,7 +9,7 @@ import org.junit.Test;
 import com.oneppd.builders.BookBuilderImpl;
 import com.oneppd.builders.ShoppingCartBuilderImpl;
 import com.oneppd.decorator.CustomerPrinter;
-import com.oneppd.decorator.Printer;
+import com.oneppd.decorator.DecoratorPrinter;
 import com.oneppd.decorator.PrinterImpl;
 import com.oneppd.decorator.ShoppingCartPrinter;
 import com.oneppd.domain.Author;
@@ -44,7 +44,7 @@ public class ShoppingCartTest {
 		customer.setLastName("Silva");
 		customer.setNickName("Anderson Fonseca");
 		
-		Printer cusPrinter = new PrinterImpl(new CustomerPrinter(customer));
+		DecoratorPrinter cusPrinter = new PrinterImpl(new CustomerPrinter(customer));
 		System.out.println(cusPrinter.doPrint());
 
 		customerRepository.add(customer);
@@ -57,7 +57,7 @@ public class ShoppingCartTest {
 
 		ShoppingCart composedShoppingCart = new ShoppingCartBuilderImpl(shoppingCart.getUuid()).build();
 
-		Printer printer = new PrinterImpl(new ShoppingCartPrinter(composedShoppingCart));
+		DecoratorPrinter printer = new PrinterImpl(new ShoppingCartPrinter(composedShoppingCart));
 		System.out.println(printer.doPrint());
 		
 		assertNotNull(composedShoppingCart);

@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import com.oneppd.builders.BookBuilderImpl;
 import com.oneppd.decorator.BookPrinter;
-import com.oneppd.decorator.Printer;
+import com.oneppd.decorator.DecoratorPrinter;
 import com.oneppd.decorator.PrinterImpl;
 import com.oneppd.domain.Author;
 import com.oneppd.domain.Book;
@@ -126,7 +126,7 @@ public class BookBuilderTest {
 	
 		Book composedBook = new BookBuilderImpl(book.getUuid()).build();
 		
-		Printer bookPrinter = new PrinterImpl(new BookPrinter(composedBook));
+		DecoratorPrinter bookPrinter = new PrinterImpl(new BookPrinter(composedBook));
 		System.out.println(bookPrinter.doPrint());
 				
 		assertNotNull(bookPrinter.doPrint());

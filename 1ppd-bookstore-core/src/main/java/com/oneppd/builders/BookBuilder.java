@@ -2,7 +2,7 @@ package com.oneppd.builders;
 
 import com.oneppd.domain.Book;
 
-public interface BookBuilder {
+public interface BookBuilder extends Builder {
 
 	public Book builderBook(String uuid);
 	

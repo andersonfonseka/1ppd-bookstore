@@ -1,10 +1,10 @@
 package com.oneppd.decorator;
 
-public class PrinterImpl implements Printer {
+public class PrinterImpl implements DecoratorPrinter {
 
-	private Printer printer;
+	private DecoratorPrinter printer;
 	
-	public PrinterImpl(Printer printer) {
+	public PrinterImpl(DecoratorPrinter printer) {
 		super();
 		this.printer = printer;
 	}

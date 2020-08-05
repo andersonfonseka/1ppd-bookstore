@@ -9,7 +9,7 @@ import com.oneppd.repository.memory.ItemRepository;
 import com.oneppd.repository.memory.PriceRepository;
 import com.oneppd.repository.memory.ShoppingCartRepository;
 
-public abstract class ConcreteRepository {
+public abstract class BookstoreConcreteRepository {
 	
 	
 	public abstract BookRepository getBookRepository();

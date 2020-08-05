@@ -3,7 +3,7 @@ package com.oneppd.decorator;
 import com.oneppd.domain.Author;
 import com.oneppd.domain.Book;
 
-public class BookPrinter implements Printer {
+public class BookPrinter implements DecoratorPrinter {
 
 	private Book book;
 

@@ -11,7 +11,7 @@ import org.junit.Test;
 import com.oneppd.builders.BookBuilderImpl;
 import com.oneppd.builders.CatalogBuilderImpl;
 import com.oneppd.decorator.CatalogPrinter;
-import com.oneppd.decorator.Printer;
+import com.oneppd.decorator.DecoratorPrinter;
 import com.oneppd.decorator.PrinterImpl;
 import com.oneppd.domain.Author;
 import com.oneppd.domain.Book;
@@ -69,7 +69,7 @@ public class CatalogTest {
 		
 		Catalog catalogBuilder = new CatalogBuilderImpl(catalog.getUuid()).build();
 		
-		Printer printer = new PrinterImpl(new CatalogPrinter(catalogBuilder));
+		DecoratorPrinter printer = new PrinterImpl(new CatalogPrinter(catalogBuilder));
 		System.out.println(printer.doPrint());
 		
 		assertFalse(catalogBuilder.getBooks().isEmpty());

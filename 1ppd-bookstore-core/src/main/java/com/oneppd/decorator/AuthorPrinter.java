@@ -2,7 +2,7 @@ package com.oneppd.decorator;
 
 import com.oneppd.domain.Author;
 
-public class AuthorPrinter implements Printer {
+public class AuthorPrinter implements DecoratorPrinter {
 
 	private Author author;
 

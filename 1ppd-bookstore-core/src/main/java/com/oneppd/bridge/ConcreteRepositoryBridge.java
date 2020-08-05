@@ -1,7 +1,7 @@
 package com.oneppd.bridge;
 
 import com.oneppd.repository.BookstoreAbstractRepository;
-import com.oneppd.repository.ConcreteRepository;
+import com.oneppd.repository.BookstoreConcreteRepository;
 import com.oneppd.repository.memory.AuthorRepository;
 import com.oneppd.repository.memory.BookHasAuthorRepository;
 import com.oneppd.repository.memory.BookRepository;
@@ -11,11 +11,11 @@ import com.oneppd.repository.memory.ItemRepository;
 import com.oneppd.repository.memory.PriceRepository;
 import com.oneppd.repository.memory.ShoppingCartRepository;
 
-public class ConcreteRepositoryBridge extends BookstoreAbstractRepository {
+public class ConcreteRepositoryBridge extends BookstoreAbstractRepository implements Bridge {
 	
-	private ConcreteRepository concreteRepository;
+	private BookstoreConcreteRepository concreteRepository;
 	
-	public ConcreteRepositoryBridge(ConcreteRepository concreteRepository) {
+	public ConcreteRepositoryBridge(BookstoreConcreteRepository concreteRepository) {
 		super();
 		this.concreteRepository = concreteRepository;
 	}

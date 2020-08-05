@@ -2,7 +2,7 @@ package com.oneppd.builders;
 
 import com.oneppd.domain.ShoppingCart;
 
-public interface ShoppingCartBuilder {
+public interface ShoppingCartBuilder extends Builder {
 
 	public ShoppingCart builderShoppingCart(String uuid);
 	

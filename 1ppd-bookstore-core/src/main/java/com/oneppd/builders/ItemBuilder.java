@@ -2,7 +2,7 @@ package com.oneppd.builders;
 
 import com.oneppd.domain.Item;
 
-public interface ItemBuilder {
+public interface ItemBuilder extends Builder {
 
 	public Item builderItem(String uuid);
 	

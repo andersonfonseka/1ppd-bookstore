@@ -2,7 +2,7 @@ package com.oneppd.decorator;
 
 import com.oneppd.domain.Price;
 
-public class PricePrinter implements Printer {
+public class PricePrinter implements DecoratorPrinter {
 
 	private Price price;
 

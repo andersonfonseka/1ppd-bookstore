@@ -2,7 +2,7 @@ package com.oneppd.decorator;
 
 import com.oneppd.domain.Customer;
 
-public class CustomerPrinter implements Printer {
+public class CustomerPrinter implements DecoratorPrinter {
 
 	private Customer customer;
 

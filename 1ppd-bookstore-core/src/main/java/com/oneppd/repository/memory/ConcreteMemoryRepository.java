@@ -1,8 +1,8 @@
 package com.oneppd.repository.memory;
 
-import com.oneppd.repository.ConcreteRepository;
+import com.oneppd.repository.BookstoreConcreteRepository;
 
-public class ConcreteMemoryRepository extends ConcreteRepository {
+public class ConcreteMemoryRepository extends BookstoreConcreteRepository {
 
 	public BookRepository getBookRepository() {
 		return BookRepository.getInstance();
