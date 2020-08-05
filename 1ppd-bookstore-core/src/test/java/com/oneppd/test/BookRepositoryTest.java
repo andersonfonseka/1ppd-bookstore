@@ -44,7 +44,7 @@ public class BookRepositoryTest {
 		
 		bookRepository.update(book);
 		
-		assertNotEquals(((Book) bookRepository.get(book)).getTitle(), "Design Patterns");
+		assertNotEquals("Design Patterns", ((Book) bookRepository.get(book)).getTitle());
 	
 	}
 

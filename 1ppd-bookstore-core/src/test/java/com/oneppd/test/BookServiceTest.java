@@ -24,7 +24,7 @@ import com.oneppd.service.impl.BookInvocationHandler;
 public class BookServiceTest {
 
 	@Test
-	public void testAdd() {
+	public void testService() {
 		
 		getBook();
 		
