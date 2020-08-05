@@ -5,11 +5,11 @@ import java.util.List;
 
 import com.oneppd.domain.Book;
 import com.oneppd.domain.Price;
-import com.oneppd.repository.AbstractRepository;
+import com.oneppd.repository.BookstoreAbstractRepository;
 
 public class PricePeriodImpl extends PriceCreator {
 
-	private AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+	private BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 	
 	private Book book;
 	

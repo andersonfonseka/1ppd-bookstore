@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.oneppd.domain.Book;
-import com.oneppd.repository.AbstractRepository;
+import com.oneppd.repository.BookstoreAbstractRepository;
 import com.oneppd.repository.memory.BookRepository;
 
 public class BookRepositoryTest {
@@ -13,7 +13,7 @@ public class BookRepositoryTest {
 	@Test
 	public void testAdd() {
 		
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 		
 		BookRepository bookRepository = abstractRepository.getBookRepository();
 		
@@ -29,7 +29,7 @@ public class BookRepositoryTest {
 	@Test
 	public void testUpdate() {
 
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 		
 		BookRepository bookRepository = abstractRepository.getBookRepository();
 		
@@ -51,7 +51,7 @@ public class BookRepositoryTest {
 	@Test
 	public void testRemove() {
 	
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 		BookRepository bookRepository = abstractRepository.getBookRepository();
 		
 		Book book = new Book();
@@ -68,7 +68,7 @@ public class BookRepositoryTest {
 	@Test
 	public void testGet() {
 	
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 		
 		BookRepository bookRepository = abstractRepository.getBookRepository();
 		
@@ -86,7 +86,7 @@ public class BookRepositoryTest {
 	@Test
 	public void testAll() {
 		
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 		
 		BookRepository bookRepository = abstractRepository.getBookRepository();
 		

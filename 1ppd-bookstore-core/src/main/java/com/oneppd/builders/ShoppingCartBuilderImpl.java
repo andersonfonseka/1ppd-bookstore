@@ -5,13 +5,13 @@ import java.util.List;
 import com.oneppd.domain.Customer;
 import com.oneppd.domain.Item;
 import com.oneppd.domain.ShoppingCart;
-import com.oneppd.repository.AbstractRepository;
+import com.oneppd.repository.BookstoreAbstractRepository;
 
 public class ShoppingCartBuilderImpl implements ShoppingCartBuilder {
 
 	private ShoppingCart shoppingCart;
 
-	private AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+	private BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 	
 	public ShoppingCartBuilderImpl(String uuid) {
 		this.shoppingCart = builderShoppingCart(uuid);

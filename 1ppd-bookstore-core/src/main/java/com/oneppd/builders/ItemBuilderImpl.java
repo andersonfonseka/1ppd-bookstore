@@ -3,13 +3,13 @@ package com.oneppd.builders;
 import com.oneppd.domain.Item;
 import com.oneppd.domain.ShoppingCart;
 import com.oneppd.flyweight.BookFlyweight;
-import com.oneppd.repository.AbstractRepository;
+import com.oneppd.repository.BookstoreAbstractRepository;
 
 public class ItemBuilderImpl implements ItemBuilder {
 
 	private Item item;
 
-	private AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+	private BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 	
 	private BookFlyweight catalogFlyweight =  BookFlyweight.getInstance();
 	

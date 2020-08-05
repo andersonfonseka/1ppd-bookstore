@@ -6,13 +6,13 @@ import java.util.List;
 import com.oneppd.domain.Book;
 import com.oneppd.domain.Catalog;
 import com.oneppd.flyweight.BookFlyweight;
-import com.oneppd.repository.AbstractRepository;
+import com.oneppd.repository.BookstoreAbstractRepository;
 
 public class CatalogBuilderImpl implements CatalogBuilder {
 
 	private Catalog catalog;
 	
-	private AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+	private BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 	
 	private BookFlyweight catalogFlyweight =  BookFlyweight.getInstance();
 	

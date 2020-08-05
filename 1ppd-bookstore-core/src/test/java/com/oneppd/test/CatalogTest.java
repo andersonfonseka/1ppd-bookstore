@@ -18,7 +18,7 @@ import com.oneppd.domain.Book;
 import com.oneppd.domain.BookHasAuthor;
 import com.oneppd.domain.Catalog;
 import com.oneppd.domain.Price;
-import com.oneppd.repository.AbstractRepository;
+import com.oneppd.repository.BookstoreAbstractRepository;
 import com.oneppd.repository.memory.AuthorRepository;
 import com.oneppd.repository.memory.BookHasAuthorRepository;
 import com.oneppd.repository.memory.BookRepository;
@@ -30,7 +30,7 @@ public class CatalogTest {
 	@Test
 	public void testAdd() {
 		
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 		
 		CatalogRepository catalogRepository = abstractRepository.getCatalogRepository();
 		
@@ -52,7 +52,7 @@ public class CatalogTest {
 	@Test
 	public void testCatalogBuilder() {
 		
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 		
 		CatalogRepository catalogRepository = abstractRepository.getCatalogRepository();
 		
@@ -78,7 +78,7 @@ public class CatalogTest {
 	
 	private Book getBook() {
 		
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 		
 		BookRepository bookRepository = abstractRepository.getBookRepository();
 		AuthorRepository authorRepository = abstractRepository.getAuthorRepository();
@@ -128,7 +128,7 @@ public class CatalogTest {
 	
 	private Book getBook2() {
 		
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 		
 		BookRepository bookRepository = abstractRepository.getBookRepository();
 		AuthorRepository authorRepository = abstractRepository.getAuthorRepository();

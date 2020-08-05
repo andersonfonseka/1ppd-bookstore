@@ -1,7 +1,6 @@
 package com.oneppd.test;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 import java.util.GregorianCalendar;
 
@@ -20,7 +19,7 @@ import com.oneppd.domain.Customer;
 import com.oneppd.domain.Item;
 import com.oneppd.domain.Price;
 import com.oneppd.domain.ShoppingCart;
-import com.oneppd.repository.AbstractRepository;
+import com.oneppd.repository.BookstoreAbstractRepository;
 import com.oneppd.repository.memory.AuthorRepository;
 import com.oneppd.repository.memory.BookHasAuthorRepository;
 import com.oneppd.repository.memory.BookRepository;
@@ -34,7 +33,7 @@ public class ShoppingCartTest {
 	@Test
 	public void testAdd() {
 
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 
 		CustomerRepository customerRepository = abstractRepository.getCustomerRepository();
 		ShoppingCartRepository shoppingCartRepository = abstractRepository.getShoppingCartRepository();
@@ -67,7 +66,7 @@ public class ShoppingCartTest {
 
 	private Book getBook() {
 		
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 		
 		BookRepository bookRepository = abstractRepository.getBookRepository();
 		AuthorRepository authorRepository = abstractRepository.getAuthorRepository();
@@ -117,7 +116,7 @@ public class ShoppingCartTest {
 	
 	private Book getBook2() {
 		
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 		
 		BookRepository bookRepository = abstractRepository.getBookRepository();
 		AuthorRepository authorRepository = abstractRepository.getAuthorRepository();

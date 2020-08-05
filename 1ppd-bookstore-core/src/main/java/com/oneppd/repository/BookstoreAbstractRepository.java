@@ -11,13 +11,13 @@ import com.oneppd.repository.memory.ItemRepository;
 import com.oneppd.repository.memory.PriceRepository;
 import com.oneppd.repository.memory.ShoppingCartRepository;
 
-public abstract class AbstractRepository {
+public abstract class BookstoreAbstractRepository extends AbstractRepository {
 	
 	public static final String MEMORY = "MEMORY";
 	
-	public static AbstractRepository getRepository(String type) {
+	public static BookstoreAbstractRepository getRepository(String type) {
 		
-		if (type.equals(AbstractRepository.MEMORY)) {
+		if (type.equals(BookstoreAbstractRepository.MEMORY)) {
 			return new ConcreteRepositoryBridge(new ConcreteMemoryRepository());
 		}
 	

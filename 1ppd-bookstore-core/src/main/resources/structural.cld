@@ -1698,8 +1698,8 @@
               </net.java.amateras.uml.properties.BooleanPropertyDescriptor>
             </propertyDescriptors>
             <stereoType></stereoType>
-            <name>com.oneppd.decorator.BookPrinter</name>
-            <path>/1ppd-bookstore-core/src/main/java/com/oneppd/decorator/BookPrinter.java</path>
+            <name>com.oneppd.repository.BookPrinter</name>
+            <path>/1ppd-bookstore-base/src/main/java/com/oneppd/repository/BookPrinter.java</path>
             <isAbstract>false</isAbstract>
           </net.java.amateras.uml.classdiagram.model.ClassModel>
         </children>

@@ -3,13 +3,13 @@ package com.oneppd.builders;
 import com.oneppd.domain.Book;
 import com.oneppd.factorymethod.PriceCreator;
 import com.oneppd.factorymethod.PricePeriodImpl;
-import com.oneppd.repository.AbstractRepository;
+import com.oneppd.repository.BookstoreAbstractRepository;
 
 public class BookBuilderImpl implements BookBuilder {
 
 	private Book book;
 
-	private AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+	private BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 	
 	public BookBuilderImpl(String uuid) {
 		this.book = builderBook(uuid);

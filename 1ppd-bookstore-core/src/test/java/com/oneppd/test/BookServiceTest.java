@@ -12,7 +12,7 @@ import com.oneppd.domain.Author;
 import com.oneppd.domain.Book;
 import com.oneppd.domain.BookHasAuthor;
 import com.oneppd.domain.Price;
-import com.oneppd.repository.AbstractRepository;
+import com.oneppd.repository.BookstoreAbstractRepository;
 import com.oneppd.repository.memory.AuthorRepository;
 import com.oneppd.repository.memory.BookHasAuthorRepository;
 import com.oneppd.repository.memory.BookRepository;
@@ -39,7 +39,7 @@ public class BookServiceTest {
 	
 	private Book getBook() {
 		
-		AbstractRepository abstractRepository = AbstractRepository.getRepository(AbstractRepository.MEMORY);
+		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 		
 		BookRepository bookRepository = abstractRepository.getBookRepository();
 		AuthorRepository authorRepository = abstractRepository.getAuthorRepository();
