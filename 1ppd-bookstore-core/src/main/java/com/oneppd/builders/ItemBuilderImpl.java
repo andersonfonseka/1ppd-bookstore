@@ -31,7 +31,6 @@ public class ItemBuilderImpl implements ItemBuilder {
 
 	@Override
 	public void buildBook() {
-
 		this.item.setBook(catalogFlyweight.getBook(this.item.getBook()));
 	}
 

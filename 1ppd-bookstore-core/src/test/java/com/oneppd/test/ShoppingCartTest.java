@@ -52,8 +52,11 @@ public class ShoppingCartTest {
 		ShoppingCart shoppingCart = new ShoppingCart(customer);
 		shoppingCartRepository.add(shoppingCart);
 
-		itemRepository.add(new Item(shoppingCart, getBook(), 1));
+		Book bookTest =  getBook();
+		
+		itemRepository.add(new Item(shoppingCart, bookTest, 1));
 		itemRepository.add(new Item(shoppingCart, getBook2(), 1));
+		itemRepository.add(new Item(shoppingCart, bookTest, 1));
 
 		ShoppingCart composedShoppingCart = new ShoppingCartBuilderImpl(shoppingCart.getUuid()).build();
 

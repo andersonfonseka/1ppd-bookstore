@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.oneppd.builders.BookBuilderImpl;
 import com.oneppd.domain.Book;
 
-public class BookFlyweight {
+public class BookFlyweight implements Flyweight {
 
 	private static BookFlyweight INSTANCE;
 	

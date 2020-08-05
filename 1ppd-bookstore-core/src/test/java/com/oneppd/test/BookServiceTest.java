@@ -32,7 +32,6 @@ public class BookServiceTest {
 		
 		List<Book> books = bookService.all();
 		
-		
 		assertTrue(!books.isEmpty());
 	}
 

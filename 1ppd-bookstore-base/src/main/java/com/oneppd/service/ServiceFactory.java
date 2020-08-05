@@ -8,8 +8,8 @@ public class ServiceFactory {
 	
 	public Service getService(Class serviceClass, InvocationHandler handler) throws UndeclaredThrowableException {
 		
-		Service bookService = (Service) Proxy.newProxyInstance(serviceClass.getClassLoader(), new Class<?>[] { serviceClass }, handler);
-		return bookService;
+		Service service = (Service) Proxy.newProxyInstance(serviceClass.getClassLoader(), new Class<?>[] { serviceClass }, handler);
+		return service;
 	}
 
 }
