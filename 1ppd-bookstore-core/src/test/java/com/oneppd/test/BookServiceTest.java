@@ -19,6 +19,7 @@ import com.oneppd.repository.memory.BookRepository;
 import com.oneppd.repository.memory.PriceRepository;
 import com.oneppd.service.BookService;
 import com.oneppd.service.ServiceFactory;
+import com.oneppd.service.impl.BookInvocationHandler;
 
 public class BookServiceTest {
 
@@ -27,7 +28,7 @@ public class BookServiceTest {
 		
 		getBook();
 		
-		BookService bookService = (BookService) new ServiceFactory().getService(BookService.class);
+		BookService bookService = (BookService) new ServiceFactory().getService(BookService.class, new BookInvocationHandler());
 		
 		List<Book> books = bookService.all();
 		
