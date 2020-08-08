@@ -2,7 +2,7 @@ package com.oneppd.domain;
 
 import java.util.List;
 
-public class Author extends Entity {
+public class Author extends Person {
 	
 	private String name;
 	

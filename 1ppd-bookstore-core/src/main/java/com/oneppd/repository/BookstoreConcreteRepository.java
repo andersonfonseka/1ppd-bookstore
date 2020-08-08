@@ -1,9 +1,11 @@
 package com.oneppd.repository;
 
+import com.oneppd.repository.memory.AddressRepository;
 import com.oneppd.repository.memory.AuthorRepository;
 import com.oneppd.repository.memory.BookHasAuthorRepository;
 import com.oneppd.repository.memory.BookRepository;
 import com.oneppd.repository.memory.CatalogRepository;
+import com.oneppd.repository.memory.CreditCardRepository;
 import com.oneppd.repository.memory.CustomerRepository;
 import com.oneppd.repository.memory.ItemRepository;
 import com.oneppd.repository.memory.PriceRepository;
@@ -27,5 +29,9 @@ public abstract class BookstoreConcreteRepository {
 	public abstract PriceRepository getPriceRepository();
 
 	public abstract CatalogRepository getCatalogRepository();
+	
+	public abstract AddressRepository getAddressRepository();
+	
+	public abstract CreditCardRepository getCreditCardRepository();
 	
 }

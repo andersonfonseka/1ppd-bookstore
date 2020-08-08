@@ -2,10 +2,12 @@ package com.oneppd.bridge;
 
 import com.oneppd.repository.BookstoreAbstractRepository;
 import com.oneppd.repository.BookstoreConcreteRepository;
+import com.oneppd.repository.memory.AddressRepository;
 import com.oneppd.repository.memory.AuthorRepository;
 import com.oneppd.repository.memory.BookHasAuthorRepository;
 import com.oneppd.repository.memory.BookRepository;
 import com.oneppd.repository.memory.CatalogRepository;
+import com.oneppd.repository.memory.CreditCardRepository;
 import com.oneppd.repository.memory.CustomerRepository;
 import com.oneppd.repository.memory.ItemRepository;
 import com.oneppd.repository.memory.PriceRepository;
@@ -58,6 +60,16 @@ public class ConcreteRepositoryBridge extends BookstoreAbstractRepository implem
 	@Override
 	public CatalogRepository getCatalogRepository() {
 		return concreteRepository.getCatalogRepository();
+	}
+
+	@Override
+	public AddressRepository getAddressRepository() {
+		return concreteRepository.getAddressRepository();
+	}
+
+	@Override
+	public CreditCardRepository getCreditCardRepository() {
+		return concreteRepository.getCreditCardRepository();
 	}
 
 }

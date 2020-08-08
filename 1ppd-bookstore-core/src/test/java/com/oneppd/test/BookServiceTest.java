@@ -19,7 +19,7 @@ import com.oneppd.repository.memory.BookRepository;
 import com.oneppd.repository.memory.PriceRepository;
 import com.oneppd.service.BookService;
 import com.oneppd.service.ServiceFactory;
-import com.oneppd.service.impl.BookInvocationHandler;
+import com.oneppd.service.handlers.BookInvocationHandler;
 
 public class BookServiceTest {
 

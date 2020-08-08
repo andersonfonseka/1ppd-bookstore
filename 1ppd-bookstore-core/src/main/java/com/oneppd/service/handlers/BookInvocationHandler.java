@@ -1,9 +1,10 @@
-package com.oneppd.service.impl;
+package com.oneppd.service.handlers;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 import com.oneppd.service.BookService;
+import com.oneppd.service.impl.BookServiceImpl;
 
 public class BookInvocationHandler implements InvocationHandler {
 

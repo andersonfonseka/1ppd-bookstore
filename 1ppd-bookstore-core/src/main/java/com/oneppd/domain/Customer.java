@@ -1,12 +1,20 @@
 package com.oneppd.domain;
 
-public class Customer extends Entity {
+public class Customer extends Person {
 
 	private String firstName;
 
-	private String LastName;
+	private String lastName;
 
 	private String nickName;
+	
+	public Customer() {
+		super();
+	}
+
+	public Customer(String uuid) {
+		super(uuid);
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -17,14 +25,18 @@ public class Customer extends Entity {
 	}
 
 	public String getLastName() {
-		return LastName;
+		return this.lastName;
 	}
 
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		this.lastName = lastName;
 	}
 
 	public String getNickName() {
+		
+		if (null == nickName)
+			return this.firstName + " " + this.lastName;
+		
 		return nickName;
 	}
 

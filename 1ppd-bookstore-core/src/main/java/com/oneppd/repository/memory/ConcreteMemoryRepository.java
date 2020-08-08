@@ -32,9 +32,16 @@ public class ConcreteMemoryRepository extends BookstoreConcreteRepository {
 		return PriceRepository.getInstance();
 	}
 
-	@Override
 	public CatalogRepository getCatalogRepository() {
 		return CatalogRepository.getInstance();
+	}
+
+	public AddressRepository getAddressRepository() {
+		return AddressRepository.getInstance();
+	}
+
+	public CreditCardRepository getCreditCardRepository() {
+		return CreditCardRepository.getInstance();
 	}
 
 }
