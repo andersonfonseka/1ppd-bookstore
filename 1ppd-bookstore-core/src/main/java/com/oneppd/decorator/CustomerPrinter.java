@@ -28,24 +28,11 @@ public class CustomerPrinter implements DecoratorPrinter {
 			sb.append(this.customer.getNickName() +"\n");
 			
 			for (Address address: this.customer.getAddresses()) {
-				sb.append("-------------------------------------------------------\n");
-				sb.append(address.getAddress()+"\n");
-				sb.append(address.getAddress2()+"\n");
-				sb.append(address.getCity()+"\n");
-				sb.append(address.getState()+"\n");
-				sb.append(address.getCountry()+"\n");
-				sb.append(address.getZip()+"\n");
+				sb.append(new AddressPrinter(address).doPrint());
 			}
 			
 			for (CreditCard creditCard: this.customer.getCreditCards()) {
-				sb.append("-------------------------------------------------------\n");
-				sb.append(creditCard.getType()+"\n");
-				sb.append(creditCard.getNumber()+"\n");
-				sb.append(creditCard.getSecurityCode()+"\n");
-				sb.append(creditCard.getFirstName()+"\n");
-				sb.append(creditCard.getLastName()+"\n");
-				sb.append(creditCard.getLimit()+"\n");
-				sb.append(creditCard.getExpirationMonth() +"/"+ creditCard.getExpirationYear() +"\n");
+				sb.append(new CreditCardPrinter(creditCard).doPrint());
 			}
 		
 			return sb.toString();
