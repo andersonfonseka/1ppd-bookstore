@@ -1,0 +1,12 @@
+language: java
+
+# see https://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure
+sudo: false
+
+# cache the build tool's caches
+cache:
+  directories:
+  - $HOME/.m2
+
+after_success:
+  - mvn clean test jacoco:report coveralls:report
