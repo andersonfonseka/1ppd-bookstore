@@ -13,17 +13,15 @@ public class ValueExpression implements Expression {
 	public boolean interpreter() {
 		return value != null;
 	}
-	
-	@Override
-	public Expression getExpression() {
-		return this;
-	}
 
-	@Override
 	public Object getValue() {
 		return this.value;
 	}
-	
-	
 
+	@Override
+	public Expression getExpression() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

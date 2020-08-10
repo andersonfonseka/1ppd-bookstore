@@ -14,24 +14,15 @@ public class NameExpression implements Expression {
 
 	@Override
 	public boolean interpreter() {
-		return this.name != null;
+		return this.value.interpreter();
 	}
 
-	@Override
-	public Expression getExpression() {
-		
-		Expression result = null;
-		
-		if (value.interpreter()) {
-			result = this.value;
-		}
-		
-		return result;
-	}
-
-	@Override
 	public Object getValue() {
-		return this.name;
+		return name;
+	}
+
+	public Expression getExpression() {
+		return this.value;
 	}
 
 }

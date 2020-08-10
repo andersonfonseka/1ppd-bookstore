@@ -24,8 +24,8 @@ public class BaseRepository<E> implements Repository<E> {
 		this.database.remove(((Entity) entity).getUuid(), entity);		
 	}
 
-	public Entity get(E entity) {
-		return (Entity) this.database.get(((Entity) entity).getUuid());
+	public E get(E entity) {
+		return (E) this.database.get(((Entity) entity).getUuid());
 	}
 
 	public List<E> all() {

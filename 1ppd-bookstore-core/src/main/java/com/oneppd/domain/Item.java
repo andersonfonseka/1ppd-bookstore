@@ -4,6 +4,8 @@ public class Item extends Entity {
 	
 	private ShoppingCart shoppingCart;
 	
+	private Order order;
+	
 	private Book book;
 	
 	private Integer quantity;
@@ -18,7 +20,7 @@ public class Item extends Entity {
 		this.book = book;
 		this.quantity = quantity;
 	}
-
+	
 	public Integer getQuantity() {
 		return quantity;
 	}
@@ -37,6 +39,14 @@ public class Item extends Entity {
 
 	public void setShoppingCart(ShoppingCart shoppingCart) {
 		this.shoppingCart = shoppingCart;
+	}
+	
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 
 	public void setQuantity(Integer quantity) {

@@ -10,6 +10,7 @@ import com.oneppd.repository.memory.ConcreteMemoryRepository;
 import com.oneppd.repository.memory.CreditCardRepository;
 import com.oneppd.repository.memory.CustomerRepository;
 import com.oneppd.repository.memory.ItemRepository;
+import com.oneppd.repository.memory.OrderRepository;
 import com.oneppd.repository.memory.PriceRepository;
 import com.oneppd.repository.memory.ShoppingCartRepository;
 
@@ -46,5 +47,7 @@ public abstract class BookstoreAbstractRepository extends AbstractRepository {
 	public abstract AddressRepository getAddressRepository();
 	
 	public abstract CreditCardRepository getCreditCardRepository();
+	
+	public abstract OrderRepository getOrderRepository();
 
 }

@@ -1,5 +1,7 @@
 package com.oneppd.test;
 
+import static org.junit.Assert.*;
+
 import java.util.GregorianCalendar;
 
 import org.junit.Before;
@@ -8,6 +10,7 @@ import org.junit.Test;
 import com.oneppd.builders.BookBuilderImpl;
 import com.oneppd.builders.CustomerBuilder;
 import com.oneppd.builders.CustomerBuilderImpl;
+import com.oneppd.builders.OrderBuilderImpl;
 import com.oneppd.builders.ShoppingCartBuilderImpl;
 import com.oneppd.decorator.CustomerPrinter;
 import com.oneppd.decorator.DecoratorPrinter;
@@ -20,6 +23,7 @@ import com.oneppd.domain.BookHasAuthor;
 import com.oneppd.domain.CreditCard;
 import com.oneppd.domain.Customer;
 import com.oneppd.domain.Item;
+import com.oneppd.domain.Order;
 import com.oneppd.domain.Payment;
 import com.oneppd.domain.PaymentMethod;
 import com.oneppd.domain.Price;
@@ -72,6 +76,14 @@ public class OrderTest {
 		orderMediator.update(item);
 		
 		orderMediator.checkout(paymentMethod, shippingAddress);
+		
+		orderMediator.complete();
+		
+		Order orderCompleted = new OrderBuilderImpl(orderMediator.getOrder().getUuid()).build();
+		
+		System.out.println(orderMediator.print());
+		
+		assertNotNull(orderCompleted);
 
 	}
 	

@@ -17,7 +17,7 @@ public class CustomerBuilderImpl implements CustomerBuilder {
 
 	@Override
 	public Customer builderCustomer(String uuid) {
-		return (Customer) abstractRepository.getCustomerRepository().get(new Customer(uuid));
+		return abstractRepository.getCustomerRepository().get(new Customer(uuid));
 	}
 	
 	@Override

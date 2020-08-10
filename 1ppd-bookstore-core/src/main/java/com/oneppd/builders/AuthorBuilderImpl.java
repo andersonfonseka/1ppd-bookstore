@@ -16,7 +16,7 @@ public class AuthorBuilderImpl implements AuthorBuilder {
 
 	@Override
 	public Author builderAuthor(String uuid) {
-		return (Author) abstractRepository.getAuthorRepository().get(new Author(uuid));
+		return abstractRepository.getAuthorRepository().get(new Author(uuid));
 	}
 
 	@Override

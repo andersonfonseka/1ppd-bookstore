@@ -27,16 +27,15 @@ public class DateGreaterThanExpression implements Expression {
 	}
 
 	@Override
-	public Expression getExpression() {
-		return this;
-	}
-
-	@Override
 	public Object getValue() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
+
+	@Override
+	public Expression getExpression() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

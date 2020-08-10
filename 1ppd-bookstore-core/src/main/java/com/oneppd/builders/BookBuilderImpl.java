@@ -18,7 +18,7 @@ public class BookBuilderImpl implements BookBuilder {
 	}
 
 	public Book builderBook(String uuid) {
-		return (Book) abstractRepository.getBookRepository().get(new Book(uuid));
+		return abstractRepository.getBookRepository().get(new Book(uuid));
 	}
 
 	public void buildAuthors() {

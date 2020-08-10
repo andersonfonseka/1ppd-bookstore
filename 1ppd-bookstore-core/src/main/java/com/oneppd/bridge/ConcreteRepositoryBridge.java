@@ -10,6 +10,7 @@ import com.oneppd.repository.memory.CatalogRepository;
 import com.oneppd.repository.memory.CreditCardRepository;
 import com.oneppd.repository.memory.CustomerRepository;
 import com.oneppd.repository.memory.ItemRepository;
+import com.oneppd.repository.memory.OrderRepository;
 import com.oneppd.repository.memory.PriceRepository;
 import com.oneppd.repository.memory.ShoppingCartRepository;
 
@@ -70,6 +71,11 @@ public class ConcreteRepositoryBridge extends BookstoreAbstractRepository implem
 	@Override
 	public CreditCardRepository getCreditCardRepository() {
 		return concreteRepository.getCreditCardRepository();
+	}
+
+	@Override
+	public OrderRepository getOrderRepository() {
+		return concreteRepository.getOrderRepository();
 	}
 
 }

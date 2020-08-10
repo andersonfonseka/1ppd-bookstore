@@ -21,7 +21,7 @@ public class ItemBuilderImpl implements ItemBuilder {
 
 	@Override
 	public Item builderItem(String uuid) {
-		return (Item) abstractRepository.getItemRepository().get(new Item(uuid));
+		return abstractRepository.getItemRepository().get(new Item(uuid));
 	}
 
 	@Override

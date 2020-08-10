@@ -21,7 +21,7 @@ public class ShoppingCartBuilderImpl implements ShoppingCartBuilder {
 
 	@Override
 	public ShoppingCart builderShoppingCart(String uuid) {
-		return (ShoppingCart) abstractRepository.getShoppingCartRepository().get(new ShoppingCart(uuid));
+		return abstractRepository.getShoppingCartRepository().get(new ShoppingCart(uuid));
 	}
 
 	@Override

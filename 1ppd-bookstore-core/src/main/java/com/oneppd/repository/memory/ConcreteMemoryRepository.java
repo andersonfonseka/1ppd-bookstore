@@ -44,4 +44,9 @@ public class ConcreteMemoryRepository extends BookstoreConcreteRepository {
 		return CreditCardRepository.getInstance();
 	}
 
+	@Override
+	public OrderRepository getOrderRepository() {
+		return OrderRepository.getInstance();
+	}
+
 }

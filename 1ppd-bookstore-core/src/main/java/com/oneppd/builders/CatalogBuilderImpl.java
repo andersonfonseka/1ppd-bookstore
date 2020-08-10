@@ -23,7 +23,7 @@ public class CatalogBuilderImpl implements CatalogBuilder {
 
 	@Override
 	public Catalog builderCatalog(String uuid) {
-		return (Catalog) abstractRepository.getCatalogRepository().get(new Catalog(uuid));
+		return abstractRepository.getCatalogRepository().get(new Catalog(uuid));
 	}
 
 	@Override
