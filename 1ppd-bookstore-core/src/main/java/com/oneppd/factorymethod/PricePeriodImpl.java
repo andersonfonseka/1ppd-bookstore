@@ -1,6 +1,5 @@
 package com.oneppd.factorymethod;
 
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -29,32 +28,29 @@ public class PricePeriodImpl extends PriceCreator {
 		
 		List<Price> prices = abstractRepository.getPriceRepository().listByBook(book);
 		
-		Object price = null;
+		Price price = null;
 		
 		if (!prices.isEmpty()) {
-			
-			for (Price p : prices) {
-				
-				NameExpression dataInicial = new NameExpression("dataInicialPreco", new ValueExpression(p.getStart()));
-				NameExpression dataFinal = new NameExpression("dataFinalPreco", new ValueExpression(p.getEnd()));
-				
-				NameExpression dataAtual = new NameExpression("dataAtual", new ValueExpression(new GregorianCalendar()));
-				
-				DateLessThanExpression dateLessThanExpression = new DateLessThanExpression(dataInicial, dataAtual);
-				DateGreaterThanExpression dateGreaterThanExpression = new DateGreaterThanExpression(dataFinal, dataAtual);
-
-				AndExpression andExpression = new AndExpression(dateLessThanExpression, dateGreaterThanExpression);
-				System.out.println(andExpression.interpreter());
-				
-				if (andExpression.interpreter()) {
-					price = p;
-					break;
-				}
-			}
-			
+			price = (Price) prices.stream()
+							.filter(p -> validatePricePeriod(p).interpreter())
+							.findFirst().get();
 		}
 
 		return (Price) price;
+	}
+
+	private AndExpression validatePricePeriod(Price p) {
+		
+		NameExpression dataInicial = new NameExpression("dataInicialPreco", new ValueExpression(p.getStart()));
+		NameExpression dataFinal = new NameExpression("dataFinalPreco", new ValueExpression(p.getEnd()));
+		
+		NameExpression dataAtual = new NameExpression("dataAtual", new ValueExpression(new GregorianCalendar()));
+		
+		DateLessThanExpression dateLessThanExpression = new DateLessThanExpression(dataInicial, dataAtual);
+		DateGreaterThanExpression dateGreaterThanExpression = new DateGreaterThanExpression(dataFinal, dataAtual);
+
+		AndExpression andExpression = new AndExpression(dateLessThanExpression, dateGreaterThanExpression);
+		return andExpression;
 	}
 
 }
