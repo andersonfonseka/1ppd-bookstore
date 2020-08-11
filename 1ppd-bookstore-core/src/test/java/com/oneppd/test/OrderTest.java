@@ -1,6 +1,6 @@
 package com.oneppd.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.GregorianCalendar;
 
@@ -30,6 +30,7 @@ import com.oneppd.domain.Price;
 import com.oneppd.domain.ShoppingCart;
 import com.oneppd.mediator.OrderMediator;
 import com.oneppd.mediator.OrderMediatorImpl;
+import com.oneppd.observer.BookstoreObserver;
 import com.oneppd.repository.BookstoreAbstractRepository;
 import com.oneppd.repository.memory.AddressRepository;
 import com.oneppd.repository.memory.AuthorRepository;
@@ -40,18 +41,12 @@ import com.oneppd.repository.memory.CustomerRepository;
 import com.oneppd.repository.memory.ItemRepository;
 import com.oneppd.repository.memory.PriceRepository;
 import com.oneppd.repository.memory.ShoppingCartRepository;
-import com.oneppd.service.PaymentService;
-import com.oneppd.service.ServiceFactory;
-import com.oneppd.service.ShippingService;
-import com.oneppd.service.impl.PaymentServiceImpl;
-import com.oneppd.service.impl.ShippingServiceImpl;
 
 public class OrderTest {
 
 	@Before
 	public void setUp() {
-		PaymentService paymentService = (PaymentService) new ServiceFactory().getService(new PaymentServiceImpl());
-		ShippingService shippingService = (ShippingService) new ServiceFactory().getService(new ShippingServiceImpl());
+		BookstoreObserver.getInstance();
 	}
 
 	@Test

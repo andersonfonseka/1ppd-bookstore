@@ -3,13 +3,20 @@ package com.oneppd.observer;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.oneppd.service.ServiceFactory;
+import com.oneppd.service.impl.PaymentServiceImpl;
+import com.oneppd.service.impl.ShippingServiceImpl;
+
 public class BookstoreObserver {
 	
 	private static BookstoreObserver INSTANCE;
 	
 	private List<Observable> observables = new ArrayList<Observable>();
 
-	private BookstoreObserver() {}
+	private BookstoreObserver() {
+		this.observables.add((Observable) new ServiceFactory().getService(new PaymentServiceImpl()));
+		this.observables.add((Observable) new ServiceFactory().getService(new ShippingServiceImpl()));
+	}
 	
 	public static BookstoreObserver getInstance() {
 		if (INSTANCE == null) {
@@ -18,11 +25,7 @@ public class BookstoreObserver {
 
 		return INSTANCE;
 	}
-	
-	public void add(Observable observable) {
-		this.observables.add(observable);
-	}
-	
+
 	public void addMessage(Message message) {
 		for (Observable observable : observables) {
 			observable.update(message);

@@ -28,13 +28,11 @@ public class DateLessThanExpression implements Expression {
 
 	@Override
 	public Object getValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Expression getExpression() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

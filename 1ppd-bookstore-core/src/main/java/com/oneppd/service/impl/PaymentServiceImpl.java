@@ -4,17 +4,11 @@ import com.oneppd.chainofresponsibility.CreditCardExpirationChecker;
 import com.oneppd.chainofresponsibility.CreditCardLimitChecker;
 import com.oneppd.domain.CreditCard;
 import com.oneppd.domain.Order;
-import com.oneppd.observer.BookstoreObserver;
 import com.oneppd.observer.Message;
 import com.oneppd.service.PaymentService;
 
 public class PaymentServiceImpl implements PaymentService {
 	
-	private BookstoreObserver bookstoreObserver = BookstoreObserver.getInstance();
-	
-	public PaymentServiceImpl() {
-		bookstoreObserver.add(this);
-	}
 
 	@Override
 	public void process(Order order) {
