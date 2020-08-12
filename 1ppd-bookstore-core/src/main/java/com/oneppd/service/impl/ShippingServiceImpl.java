@@ -5,7 +5,7 @@ import com.oneppd.observer.Message;
 import com.oneppd.observer.Observable;
 import com.oneppd.service.ShippingService;
 
-public class ShippingServiceImpl implements ShippingService, Observable {
+public class ShippingServiceImpl extends ServiceImpl implements ShippingService, Observable {
 	
 	@Override
 	public void process(Order order) {}

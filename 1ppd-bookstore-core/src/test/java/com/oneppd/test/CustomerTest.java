@@ -2,6 +2,8 @@ package com.oneppd.test;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.util.List;
+
 import org.junit.Test;
 
 import com.oneppd.builders.CustomerBuilder;
@@ -13,6 +15,7 @@ import com.oneppd.domain.Address;
 import com.oneppd.domain.CreditCard;
 import com.oneppd.domain.Customer;
 import com.oneppd.domain.Payment;
+import com.oneppd.facade.CustomerFacade;
 import com.oneppd.repository.BookstoreAbstractRepository;
 import com.oneppd.repository.memory.AddressRepository;
 import com.oneppd.repository.memory.CreditCardRepository;
@@ -20,6 +23,32 @@ import com.oneppd.repository.memory.CustomerRepository;
 
 public class CustomerTest {
 
+	@Test
+	public void testFacade() {
+		
+		Customer customer = new Customer();
+		customer.setFirstName("Anderson");
+		customer.setLastName("Fonseca");
+		
+		Address address = new Address();
+		address.setPerson(customer);
+		address.setAddress("Av. Tucunare, 2000");
+		address.setAddress2("Condominio XPTO");
+		address.setCity("Barueri");
+		address.setState("SP");
+		address.setCountry("Brazil");
+		address.setZip("06000-000");
+		
+		CustomerFacade customerFacade = new CustomerFacade();
+		
+		customerFacade.getCustomerService().add(customer);
+		customerFacade.getAddressService().add(address);
+		
+		List<Customer> list = customerFacade.getCustomerService().all();
+		
+		assertNotNull(list);
+	}
+	
 	@Test
 	public void testAdd() {
 		

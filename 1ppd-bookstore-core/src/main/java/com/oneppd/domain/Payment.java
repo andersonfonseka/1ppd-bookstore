@@ -2,7 +2,7 @@ package com.oneppd.domain;
 
 import java.util.Date;
 
-public class Payment {
+public class Payment extends Entity {
 	
 	public static final String VISA = "VISA";
 	public static final String MASTERCARD = "MASTERCARD";

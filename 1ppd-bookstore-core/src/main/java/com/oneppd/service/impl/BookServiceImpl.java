@@ -6,15 +6,19 @@ import java.util.List;
 
 import com.oneppd.builders.BookBuilderImpl;
 import com.oneppd.domain.Book;
-import com.oneppd.repository.BookstoreAbstractRepository;
+import com.oneppd.repository.Repository;
 import com.oneppd.service.BookService;
 
-public class BookServiceImpl implements BookService {
+public class BookServiceImpl extends ServiceImpl<Book> implements BookService {
+
+	public BookServiceImpl(Repository<Book> repository) {
+		super(repository);
+	}
 
 	@Override
 	public List<Book> all() throws UndeclaredThrowableException  {
 		
-		List<Book> books = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY).getBookRepository().all();
+		List<Book> books = getRepository().all();
 		
 		List<Book> composedBooks = new ArrayList<Book>();
 		

@@ -4,11 +4,18 @@ import com.oneppd.chainofresponsibility.CreditCardExpirationChecker;
 import com.oneppd.chainofresponsibility.CreditCardLimitChecker;
 import com.oneppd.domain.CreditCard;
 import com.oneppd.domain.Order;
+import com.oneppd.domain.Payment;
 import com.oneppd.observer.Message;
+import com.oneppd.repository.Repository;
 import com.oneppd.service.PaymentService;
 
-public class PaymentServiceImpl implements PaymentService {
+public class PaymentServiceImpl extends ServiceImpl<Payment> implements PaymentService {
+
+	public PaymentServiceImpl() {}
 	
+	public PaymentServiceImpl(Repository<Payment> repository) {
+		super(repository);
+	}
 
 	@Override
 	public void process(Order order) {
