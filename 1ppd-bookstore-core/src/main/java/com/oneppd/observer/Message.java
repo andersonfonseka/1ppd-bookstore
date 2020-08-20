@@ -3,7 +3,7 @@ package com.oneppd.observer;
 public class Message {
 	
 	public static final String PAYMENT = "PAYMENT";
-	public static final String SHIPPING = "SHIPPING";
+	public static final String SHIPMENT = "SHIPMENT";
 	
 	private String type;
 	

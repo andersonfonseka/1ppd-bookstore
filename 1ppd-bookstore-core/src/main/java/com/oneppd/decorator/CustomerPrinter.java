@@ -17,14 +17,9 @@ public class CustomerPrinter implements DecoratorPrinter {
 	public String doPrint() {
 		
 			StringBuilder sb = new StringBuilder();
-			
-			sb.append("Customer\n");
-			sb.append("===================================\n");
 
-			
-			sb.append(this.customer.getUuid() +"\n");
+			sb.append(this.customer.getLastName() +", ");
 			sb.append(this.customer.getFirstName() +"\n");
-			sb.append(this.customer.getLastName() +"\n");
 			sb.append(this.customer.getNickName() +"\n");
 			
 			for (Address address: this.customer.getAddresses()) {

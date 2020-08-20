@@ -4,20 +4,20 @@ import com.oneppd.domain.Order;
 import com.oneppd.observer.BookstoreObserver;
 import com.oneppd.observer.Message;
 
-public class ShippingCommand implements Command {
+public class ShipmentCommand implements Command {
 	
 	private BookstoreObserver bookstoreObserver = BookstoreObserver.getInstance();
 
 	private Order order;
 	
-	public ShippingCommand(Order order) {
+	public ShipmentCommand(Order order) {
 		super();
 		this.order = order;
 	}
 
 	@Override
 	public void execute() {
-		bookstoreObserver.addMessage(new Message(Message.SHIPPING, order));
+		bookstoreObserver.addMessage(new Message(Message.SHIPMENT, order));
 	}
 
 }

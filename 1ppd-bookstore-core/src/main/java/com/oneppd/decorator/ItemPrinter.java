@@ -16,11 +16,7 @@ public class ItemPrinter implements DecoratorPrinter {
 
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("Item\n");
 		sb.append("===================================\n");
-
-
-		sb.append(this.item.getUuid() + "\n");
 		sb.append(new PrinterImpl(new BookPrinter(this.item.getBook())).doPrint());
 		sb.append(this.item.getQuantity() + "\n");
 

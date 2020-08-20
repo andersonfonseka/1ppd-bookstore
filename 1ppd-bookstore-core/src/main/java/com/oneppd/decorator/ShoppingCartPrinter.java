@@ -19,9 +19,7 @@ public class ShoppingCartPrinter implements DecoratorPrinter {
 		
 		sb.append("Shopping Cart\n");
 		sb.append("===================================\n");
-
-
-		sb.append(this.shoppingCart.getUuid() + "\n");
+	
 		sb.append(new PrinterImpl(new CustomerPrinter(this.shoppingCart.getCustomer())).doPrint());
 		
 		for (Item item : this.shoppingCart.getItems()) {

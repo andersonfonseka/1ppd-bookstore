@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import com.oneppd.builders.BookBuilderImpl;
 import com.oneppd.builders.ShoppingCartBuilderImpl;
-import com.oneppd.decorator.CustomerPrinter;
 import com.oneppd.decorator.DecoratorPrinter;
 import com.oneppd.decorator.PrinterImpl;
 import com.oneppd.decorator.ShoppingCartPrinter;
@@ -19,6 +18,7 @@ import com.oneppd.domain.Customer;
 import com.oneppd.domain.Item;
 import com.oneppd.domain.Price;
 import com.oneppd.domain.ShoppingCart;
+import com.oneppd.memento.Memento;
 import com.oneppd.repository.BookstoreAbstractRepository;
 import com.oneppd.repository.memory.AuthorRepository;
 import com.oneppd.repository.memory.BookHasAuthorRepository;
@@ -33,6 +33,8 @@ public class ShoppingCartTest {
 	@Test
 	public void testAdd() {
 
+		Memento memento = Memento.getInstance();
+		
 		BookstoreAbstractRepository abstractRepository = BookstoreAbstractRepository.getRepository(BookstoreAbstractRepository.MEMORY);
 
 		CustomerRepository customerRepository = abstractRepository.getCustomerRepository();
@@ -43,9 +45,6 @@ public class ShoppingCartTest {
 		customer.setFirstName("Anderson");
 		customer.setLastName("Silva");
 		customer.setNickName("Anderson Fonseca");
-		
-		DecoratorPrinter cusPrinter = new PrinterImpl(new CustomerPrinter(customer));
-		System.out.println(cusPrinter.doPrint());
 
 		customerRepository.add(customer);
 
@@ -55,13 +54,27 @@ public class ShoppingCartTest {
 		Book bookTest =  getBook();
 		
 		itemRepository.add(new Item(shoppingCart, bookTest, 1));
-		itemRepository.add(new Item(shoppingCart, getBook2(), 1));
-		itemRepository.add(new Item(shoppingCart, bookTest, 1));
 
 		ShoppingCart composedShoppingCart = new ShoppingCartBuilderImpl(shoppingCart.getUuid()).build();
-
+		memento.saveState(composedShoppingCart);
+				
 		DecoratorPrinter printer = new PrinterImpl(new ShoppingCartPrinter(composedShoppingCart));
 		System.out.println(printer.doPrint());
+
+		itemRepository.add(new Item(composedShoppingCart, getBook2(), 1));
+		
+		ShoppingCart composedShoppingCart2 = new ShoppingCartBuilderImpl(shoppingCart.getUuid()).build();
+		memento.saveState(composedShoppingCart2);
+
+		printer = new PrinterImpl(new ShoppingCartPrinter(composedShoppingCart));
+		System.out.println(printer.doPrint());
+		
+		ShoppingCart composedShoppingCartView = memento.restore();
+		composedShoppingCartView = memento.restore();
+
+		printer = new PrinterImpl(new ShoppingCartPrinter(composedShoppingCartView));
+		System.out.println(printer.doPrint());
+		
 		
 		assertNotNull(composedShoppingCart);
 

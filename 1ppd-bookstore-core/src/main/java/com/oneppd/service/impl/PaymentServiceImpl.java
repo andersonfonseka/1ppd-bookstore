@@ -1,11 +1,11 @@
 package com.oneppd.service.impl;
 
 import com.oneppd.chainofresponsibility.CreditCardExpirationChecker;
+import com.oneppd.chainofresponsibility.CreditCardFraudChecker;
 import com.oneppd.chainofresponsibility.CreditCardLimitChecker;
 import com.oneppd.domain.CreditCard;
 import com.oneppd.domain.Order;
 import com.oneppd.domain.Payment;
-import com.oneppd.observer.Message;
 import com.oneppd.repository.Repository;
 import com.oneppd.service.PaymentService;
 
@@ -23,19 +23,15 @@ public class PaymentServiceImpl extends ServiceImpl<Payment> implements PaymentS
 
 			CreditCard creditCard = (CreditCard) order.getPayment().getPaymentMethod();
 			
-			CreditCardLimitChecker limitChecker = new CreditCardLimitChecker(null);
+			CreditCardFraudChecker fraudChecker = new CreditCardFraudChecker(null);
+			CreditCardLimitChecker limitChecker = new CreditCardLimitChecker(fraudChecker);
 			CreditCardExpirationChecker expirationChecker = new CreditCardExpirationChecker(limitChecker);
 			
 			expirationChecker.processRequest(order.getPayment().getValue(), creditCard);
 		}
 	}
 
-	@Override
-	public void update(Message o) {
-		if (o.getType().equals(Message.PAYMENT)) {
-			process((Order) o.getMessage());
-		}
-	}
+
 
 
 }

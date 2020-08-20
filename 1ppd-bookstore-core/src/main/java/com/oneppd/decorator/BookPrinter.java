@@ -16,15 +16,11 @@ public class BookPrinter implements DecoratorPrinter {
 	public String doPrint() {
 
 		StringBuilder sb = new StringBuilder();
-		
-		sb.append("Book\n");
+
 		sb.append("===================================\n");
-
-
-		sb.append(this.book.getUuid() + "\n");
-		sb.append(this.book.getTitle() + "\n");
+		sb.append(this.book.getTitle() + ", Edition ");
 		sb.append(this.book.getEdition() + "\n");
-
+		
 		for (Author author : this.book.getAuthors()) {
 			sb.append(new PrinterImpl(new AuthorPrinter(author)).doPrint());
 		}

@@ -16,11 +16,7 @@ public class PricePrinter implements DecoratorPrinter {
 
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("Price\n");
-		sb.append("===================================\n");
-
-		sb.append(this.price.getUuid() + "\n");
-		sb.append(this.price.getValue() + "\n");
+		sb.append("\n$ " + this.price.getValue() + "\n");
 
 		return sb.toString();
 	}

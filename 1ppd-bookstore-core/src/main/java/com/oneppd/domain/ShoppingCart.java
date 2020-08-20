@@ -3,7 +3,7 @@ package com.oneppd.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShoppingCart extends Entity {
+public class ShoppingCart extends Entity implements Cloneable {
 	
 	private Customer customer;
 	
@@ -34,6 +34,11 @@ public class ShoppingCart extends Entity {
 		this.customer = customer;
 	}
 	
+	
+	@Override
+	public ShoppingCart clone() throws CloneNotSupportedException {
+		return (ShoppingCart) super.clone();
+	}
 	
 	
 }

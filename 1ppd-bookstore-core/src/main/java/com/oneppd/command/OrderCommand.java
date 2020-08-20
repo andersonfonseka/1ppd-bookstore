@@ -14,7 +14,6 @@ public class OrderCommand implements Command {
 	@Override
 	public void execute() {
 		new PaymentCommand(this.order).execute();
-		new ShippingCommand(this.order).execute();
 	}
 
 }
