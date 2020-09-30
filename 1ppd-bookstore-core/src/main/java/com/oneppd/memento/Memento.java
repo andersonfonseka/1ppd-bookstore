@@ -1,22 +1,27 @@
 package com.oneppd.memento;
 
 import java.util.Stack;
+import java.util.concurrent.locks.ReentrantLock;
 
 import com.oneppd.domain.ShoppingCart;
 
 public class Memento {
 	
-	private static Memento INSTANCE = new Memento();
+	private static Memento INSTANCE;
+	
+	private static ReentrantLock lock = new ReentrantLock();
 
-	private Stack<ShoppingCart> list = new Stack<ShoppingCart>();
+	private Stack<ShoppingCart> stack = new Stack<ShoppingCart>();
 	
 	private Memento() {}
 	
 	public static Memento getInstance() {
 		
+		lock.lock();
 		if (INSTANCE == null) {
 			INSTANCE = new Memento();
 		}
+		lock.unlock();
 
 		return INSTANCE;
 	}
@@ -24,14 +29,12 @@ public class Memento {
 	
 	public void saveState(ShoppingCart e) {
 		try {
-			this.list.push(e.clone());
-		} catch (CloneNotSupportedException e1) {
-			e1.printStackTrace();
-		}
+			this.stack.push(e.clone());
+		} catch (CloneNotSupportedException e1) {}
 	}
 	
 	public ShoppingCart restore() {
-		return list.pop();
+		return stack.pop();
 	}
 
 }
